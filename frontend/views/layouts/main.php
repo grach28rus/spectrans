@@ -26,12 +26,15 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
+    <div class="head">
+        ddf
+    </div>
     <?php
     NavBar::begin([
         'brandLabel' => 'My Company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse',
         ],
     ]);
     $menuItems = [
