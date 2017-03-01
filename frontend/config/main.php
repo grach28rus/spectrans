@@ -36,14 +36,16 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'logout' => 'admin/logout',
+                'admin' => 'admin/index',
+                'login' => 'admin/login',
+                '/' => 'site/index',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
