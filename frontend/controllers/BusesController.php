@@ -117,6 +117,22 @@ class BusesController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionBusesList($id = null)
+    {
+        $buses = Buses::find();
+        $typesEquipment = TypesEquipment::findOne($id);
+        if ($id) {
+            $buses->where(['types_equipment_id' => $id]);
+        }
+        $buses = $buses->all();
+
+
+        return $this->render('busesList', [
+            'buses'          => $buses,
+            'typesEquipment' => $typesEquipment
+        ]);
+    }
+
     /**
      * Finds the Buses model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

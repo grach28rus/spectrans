@@ -271,7 +271,7 @@ $this->title = 'My Yii Application';
                 <div class="ibox-content product-box">
 
                     <div class="product-imitation">
-                        <a href="#" class="product-name">
+                        <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="product-name">
                             <?= Html::img('/' . $typeEquipment->image_path, ['alt' => 'image']) ?>
                         </a>
                     </div>
@@ -281,7 +281,7 @@ $this->title = 'My Yii Application';
                             <?= $typeEquipment->description ?>
                         </div>
                         <div class="m-t text-right">
-                            <a href="#" class="btn btn-sm btn-outline btn-primary">Подробнее <i class="fa fa-long-arrow-right"></i> </a>
+                            <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="btn btn-sm btn-outline btn-primary">Подробнее <i class="fa fa-long-arrow-right"></i> </a>
                         </div>
                     </div>
                 </div>
