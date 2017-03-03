@@ -11,7 +11,7 @@ $this->title = 'Create Characteristics Buses';
 $this->params['breadcrumbs'][] = ['label' => 'Characteristics Buses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="characteristics-buses-create">
+<div class="ibox-content characteristics-buses-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

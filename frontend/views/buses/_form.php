@@ -13,7 +13,7 @@ use kartik\select2\Select2;
 
 ?>
 
-<div class="buses-form">
+<div class="row">
 
     <div class="col-md-6">
         <?php $form = ActiveForm::begin(); ?>

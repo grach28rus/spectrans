@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 /* @var $uploadForm common\models\UploadForm */
 ?>
 
-<div class="types-equipment-form">
+<div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6">
         <?php $form = ActiveForm::begin(); ?>
 

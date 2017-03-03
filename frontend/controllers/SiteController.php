@@ -71,7 +71,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $typesEquipment = TypesEquipment::find()->all();
+
+        return $this->render('index', [
+            'typesEquipment' => $typesEquipment
+        ]);
     }
 
     /**

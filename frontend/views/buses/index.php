@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Buses';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="buses-index">
+<div class="ibox-content buses-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

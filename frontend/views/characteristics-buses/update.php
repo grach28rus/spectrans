@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Characteristics Buses', 'url' => [
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="characteristics-buses-update">
+<div class="ibox-content characteristics-buses-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

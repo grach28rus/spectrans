@@ -10,7 +10,7 @@ $this->title = 'Create Types Equipment';
 $this->params['breadcrumbs'][] = ['label' => 'Types Equipments', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="types-equipment-create">
+<div class="ibox-content types-equipment-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
