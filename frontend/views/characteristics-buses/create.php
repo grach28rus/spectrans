@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\CharacteristicsBuses */
+/* @var $buses array */
 
 $this->title = 'Create Characteristics Buses';
 $this->params['breadcrumbs'][] = ['label' => 'Characteristics Buses', 'url' => ['index']];
@@ -16,6 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'buses' => $buses,
     ]) ?>
 
 </div>

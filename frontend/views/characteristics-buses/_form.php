@@ -2,30 +2,37 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\CharacteristicsBuses */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $buses array */
+
 ?>
 
 <div class="characteristics-buses-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="col-md-6">
+        <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'buses_id')->textInput() ?>
+        <?= $form->field($model, 'buses_id')->widget(Select2::classname(), [
+            'data' => $buses,
+            'language' => 'ru',
+            'options' => ['placeholder' => Yii::t('app', 'Select type flow') . '...'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'value')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'value')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'create_at')->textInput() ?>
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
 
-    <?= $form->field($model, 'update_at')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?php ActiveForm::end(); ?>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>

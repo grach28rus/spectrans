@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\CharacteristicsBuses */
+/* @var $buses array */
 
 $this->title = 'Update Characteristics Buses: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Characteristics Buses', 'url' => ['index']];
@@ -16,6 +17,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'buses' => $buses,
     ]) ?>
 
 </div>

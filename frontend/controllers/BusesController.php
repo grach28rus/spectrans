@@ -8,6 +8,9 @@ use frontend\models\BusesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\TypesEquipment;
+use yii\helpers\ArrayHelper;
+use common\models\CharacteristicsBuses;
 
 /**
  * BusesController implements the CRUD actions for Buses model.
@@ -64,14 +67,16 @@ class BusesController extends Controller
     public function actionCreate()
     {
         $model = new Buses();
-
+        $typesEquipment = TypesEquipment::find()->all();
+        $typesEquipment = ArrayHelper::map($typesEquipment, 'id', 'name');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
         }
+
+        return $this->render('create', [
+            'model'                     => $model,
+            'typesEquipment'            => $typesEquipment,
+        ]);
     }
 
     /**
@@ -83,12 +88,18 @@ class BusesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $characteristicsBusesModel = new CharacteristicsBuses();
+        $characteristicsBusesData = CharacteristicsBuses::findAll(['buses_id' => $id]);
+        $typesEquipment = TypesEquipment::find()->all();
+        $typesEquipment = ArrayHelper::map($typesEquipment, 'id', 'name');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
-                'model' => $model,
+                'model'                     => $model,
+                'typesEquipment'            => $typesEquipment,
+                'characteristicsBusesData'  => $characteristicsBusesData,
+                'characteristicsBusesModel' => $characteristicsBusesModel,
             ]);
         }
     }

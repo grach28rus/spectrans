@@ -8,6 +8,8 @@ use frontend\models\CharacteristicsBusesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use common\models\Buses;
+use yii\helpers\ArrayHelper;
 
 /**
  * CharacteristicsBusesController implements the CRUD actions for CharacteristicsBuses model.
@@ -64,14 +66,17 @@ class CharacteristicsBusesController extends Controller
     public function actionCreate()
     {
         $model = new CharacteristicsBuses();
+        $buses = Buses::find()->all();
+        $buses = ArrayHelper::map($buses, 'id', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            return $this->redirect(['/buses/update', 'id' => $model->buses_id]);
         }
+
+        return $this->render('create', [
+            'model' => $model,
+            'buses' => $buses,
+        ]);
     }
 
     /**
@@ -83,12 +88,15 @@ class CharacteristicsBusesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $buses = Buses::find()->all();
+        $buses = ArrayHelper::map($buses, 'id', 'name');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'buses' => $buses
             ]);
         }
     }
