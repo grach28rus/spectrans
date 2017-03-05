@@ -12,7 +12,8 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
-    public $subject;
+    public $number;
+    public $subject = 'Аренда спец техники';
     public $body;
     public $verifyCode;
 
@@ -24,7 +25,7 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'body'], 'required'],
+            [['name', 'number', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
@@ -39,6 +40,10 @@ class ContactForm extends Model
     {
         return [
             'verifyCode' => 'Проверочный код',
+            'name'       => 'Имя',
+            'number'     => 'Номер телефона',
+            'body'       => 'Текст сообщения',
+            'email'      => 'Email адрес',
         ];
     }
 
@@ -50,7 +55,9 @@ class ContactForm extends Model
      */
     public function sendEmail($email)
     {
-        return Yii::$app->mailer->compose()
+        return Yii::$app->mailer->compose(['html' => 'emailTemplate'], [
+            'paramsTemplate' => $this
+        ])
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
             ->setSubject($this->subject)

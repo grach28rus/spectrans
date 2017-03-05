@@ -8,7 +8,7 @@ use yii\helpers\Html;
 $this->title = 'My Yii Application';
 ?>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <?php if (count($typesEquipment) == 0) : ?>
+    <?php if (count($typesEquipment) != 0) : ?>
         <div class="row">
             <div class="col-md-3">
                 <div class="ibox">

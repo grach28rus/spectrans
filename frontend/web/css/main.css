@@ -6,7 +6,7 @@ body {
 
 }
 header {
-    height: 298px;
+    height: 228px;
     background: url(../images/header-bg.jpg)  no-repeat 50% 0;
 }
 
@@ -15,4 +15,8 @@ ul.navbar-nav {
 }
 .nav-bar-trans {
     background: #fbc02d;
+}
+
+.border-none {
+    border: none;
 }

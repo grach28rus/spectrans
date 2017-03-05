@@ -7,35 +7,44 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\widgets\MaskedInput;
+use yii\bootstrap\Modal;
 
 $this->title = 'Контакты';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-contact">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row ibox-content">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+<?php
+Modal::begin([
+    'header' => '<h2>' .  Html::encode($this->title) . '</h2>',
+    'id' => 'contact-modal',
+]);
+?>
+<div class="row">
+    <div class="col-md-12">
+        <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
-                <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'email') ?>
+        <?= $form->field($model, 'email') ?>
 
-                <?= $form->field($model, 'subject') ?>
+        <?= $form->field($model, 'number')->widget(MaskedInput::className(), [
+            'mask' => '(999) 999-9999'
+        ]) ?>
 
-                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+        <?= $form->field($model, 'body')->textarea(['rows' => 3]) ?>
 
-                <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                ]) ?>
+        <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+            'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+        ]) ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
         </div>
-    </div>
 
+        <?php ActiveForm::end(); ?>
+    </div>
 </div>
+<?php
+Modal::end();
+
+?>
