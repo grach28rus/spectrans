@@ -5,7 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\TypesEquipment;
 use frontend\models\TypesEquipmentSearch;
-use yii\web\Controller;
+use frontend\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\models\UploadForm;

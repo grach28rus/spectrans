@@ -5,7 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Buses;
 use frontend\models\BusesSearch;
-use yii\web\Controller;
+use frontend\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\models\TypesEquipment;
@@ -70,7 +70,7 @@ class BusesController extends Controller
         $typesEquipment = TypesEquipment::find()->all();
         $typesEquipment = ArrayHelper::map($typesEquipment, 'id', 'name');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['update', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -120,9 +120,10 @@ class BusesController extends Controller
     public function actionBusesList($id = null)
     {
         $buses = Buses::find();
-        $typesEquipment = TypesEquipment::findOne($id);
+        $typesEquipment = null;
         if ($id) {
             $buses->where(['types_equipment_id' => $id]);
+            $typesEquipment = TypesEquipment::findOne($id);
         }
         $buses = $buses->all();
 

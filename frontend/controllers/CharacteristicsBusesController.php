@@ -5,7 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\CharacteristicsBuses;
 use frontend\models\CharacteristicsBusesSearch;
-use yii\web\Controller;
+use frontend\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\models\Buses;

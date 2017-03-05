@@ -11,6 +11,13 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+$typesEquipment = [];
+foreach ($this->context->typesEquipment as $type) {
+    $typesEquipment[] = [
+        'label' => $type->name,
+        'url' => ['/buses/buses-list', 'id' => $type->id]
+    ];
+}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -32,17 +39,19 @@ AppAsset::register($this);
         <div class="anchor"></div>
         <?php
         NavBar::begin([
-            'brandLabel' => 'My Company',
+            'brandLabel' => 'РентПромТранс',
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar-inverse navbar-static-top',
+                'class' => 'navbar-inverse navbar-static-top ',
                 'id'    => 'nav-trans'
             ],
         ]);
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Главная', 'url' => ['/site/index']],
+            ['label' => 'Техника', 'items' => $typesEquipment],
+            ['label' => 'Цены', 'url' => ['/buses/buses-list']],
+            ['label' => 'О компании', 'url' => ['/site/about']],
+            ['label' => 'Контакты', 'url' => ['/site/contact']],
         ];
         if (!Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Тип спецтехники', 'url' => ['/types-equipment/index']];
@@ -78,9 +87,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; РентПромТранс <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">+7 (495) 642-44-02</p>
     </div>
 </footer>
 

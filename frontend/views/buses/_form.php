@@ -62,7 +62,7 @@ use kartik\select2\Select2;
         </div>
 
         <?php ActiveForm::end() ?>
-        <?php endif; ?>
+
         <table class="table table-hover">
             <thead>
             <tr>
@@ -73,6 +73,7 @@ use kartik\select2\Select2;
                     Значение
                 </th>
             </tr>
+            </thead>
             <tbody>
             <?php foreach ($characteristicsBusesData as $characteristicsBuses) : ?>
                 <tr>
@@ -86,6 +87,7 @@ use kartik\select2\Select2;
             <?php endforeach; ?>
             </tbody>
         </table>
+        <?php endif; ?>
     </div>
 
 </div>

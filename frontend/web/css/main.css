@@ -6,10 +6,13 @@ body {
 
 }
 header {
-    height: 450px;
+    height: 298px;
     background: url(../images/header-bg.jpg)  no-repeat 50% 0;
 }
 
 ul.navbar-nav {
     font-size: 14px;
+}
+.nav-bar-trans {
+    background: #fbc02d;
 }
