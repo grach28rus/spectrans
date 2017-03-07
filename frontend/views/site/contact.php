@@ -21,7 +21,7 @@ Modal::begin([
 ?>
 <div class="row">
     <div class="col-md-12">
-        <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+        <?php $form = ActiveForm::begin(['id' => 'contact-form', 'action' => '/site/contact']); ?>
 
         <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
@@ -38,7 +38,7 @@ Modal::begin([
         ]) ?>
 
         <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+            <?= Html::submitButton('Отправить заявку', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

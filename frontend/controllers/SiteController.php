@@ -105,12 +105,12 @@ class SiteController extends Controller
                 Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
             }
 
-            return $this->refresh();
+
         } else {
-            return $this->render('contact', [
-                'model' => $model,
-            ]);
+            Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
         }
+
+        return $this->refresh();
     }
 
     /**

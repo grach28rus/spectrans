@@ -59,7 +59,7 @@ class ContactForm extends Model
             'paramsTemplate' => $this
         ])
             ->setTo($email)
-            ->setFrom([$this->email => $this->name])
+            ->setFrom([$email => $this->name])
             ->setSubject($this->subject)
             ->setTextBody($this->body)
             ->send();
