@@ -8,7 +8,7 @@ use common\models\CharacteristicsBuses;
 /* @var $buses \common\models\Buses */
 /* @var $typesEquipment \common\models\TypesEquipment */
 
-$this->title = $typesEquipment->name ? $typesEquipment->name : 'Все';
+$this->title = isset($typesEquipment->name) ? $typesEquipment->name : 'Все';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
