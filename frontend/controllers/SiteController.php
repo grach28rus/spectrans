@@ -100,14 +100,8 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if (1) {
-                try {
-                    $model->sendEmail(Yii::$app->params['adminEmail']);
-                    Yii::$app->session->setFlash('success', 'Ваше сообщение было отправленно!');
-                } catch (ErrorException $e) {
-                    Yii::warning($e);
-                }
-
+            if ($model->sendEmail(Yii::$app->params['adminEmail']) === null) {
+                Yii::$app->session->setFlash('success', 'Ваше сообщение было отправленно!');
             } else {
                 Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
             }
