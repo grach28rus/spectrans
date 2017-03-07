@@ -100,16 +100,16 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail']) === '') {
+            if ($model->sendEmail(Yii::$app->params['adminEmail']) === false) {
                 Yii::$app->session->setFlash('success', 'Ваше сообщение было отправленно!');
             } else {
-                Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки1');
+                Yii::$app->session->setFlash('error', 'Произошла ошибка во время отправки1');
             }
         } else {
-            Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки2');
+            Yii::$app->session->setFlash('error', 'Произошла ошибка во время отправки2');
         }
 
-        return $this->redirect('index');
+        return $this->redirect('/');
     }
 
     /**
