@@ -36,6 +36,10 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'mail' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,

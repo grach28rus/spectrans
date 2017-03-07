@@ -105,8 +105,6 @@ class SiteController extends Controller
             } else {
                 Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
             }
-
-
         } else {
             Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
         }
