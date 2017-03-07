@@ -38,7 +38,7 @@ return [
         ],
         'mail' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
+            'useFileTransport' => 'false',
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'mail.yandex.ru',

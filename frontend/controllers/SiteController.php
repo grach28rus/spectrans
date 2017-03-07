@@ -10,6 +10,7 @@ use frontend\models\ContactForm;
 use common\models\UploadForm;
 use yii\web\UploadedFile;
 use common\models\TypesEquipment;
+use yii\base\ErrorException;
 
 /**
  * Site controller
@@ -100,8 +101,13 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if (1) {
-                $a = $model->sendEmail(Yii::$app->params['adminEmail']);
-                Yii::$app->session->setFlash('success', 'Ваше сообщение было отправленно!' . $a);
+                try {
+                    $model->sendEmail(Yii::$app->params['adminEmail']);
+                    Yii::$app->session->setFlash('success', 'Ваше сообщение было отправленно!');
+                } catch (ErrorException $e) {
+                    Yii::warning($e);
+                }
+
             } else {
                 Yii::$app->session->setFlash('error', 'произошла ошибка во время отправки');
             }
