@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Buses */
-/* @var $buses array */
+/* @var $typesEquipment array */
 /* @var $characteristicsBusesModel \common\models\CharacteristicsBuses */
 /* @var $characteristicsBusesData array \common\models\CharacteristicsBuses */
 
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model'                     => $model,
-        'buses'                     => $buses,
+        'typesEquipment'            => $typesEquipment,
         'characteristicsBusesModel' => $characteristicsBusesModel,
         'characteristicsBusesData'  => $characteristicsBusesData,
     ]) ?>

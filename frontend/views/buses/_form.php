@@ -50,7 +50,7 @@ use kartik\select2\Select2;
             'action'  => '/characteristics-buses/create'
         ]) ?>
 
-            <?= $form->field($characteristicsBusesModel, 'buses_id')->hiddenInput(['value' => $model->id]) ?>
+            <?= $form->field($characteristicsBusesModel, 'buses_id')->hiddenInput(['value' => $model->id])->label(false) ?>
 
             <?= $form->field($characteristicsBusesModel, 'name')->textInput(['maxlength' => true]) ?>
 
