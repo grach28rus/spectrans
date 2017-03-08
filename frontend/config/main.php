@@ -20,11 +20,11 @@ return [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'mx.yandex.net',
+                'host' => 'ssl://mx.yandex.net',
                 'username' => 'service@territoriyad.com',
                 'password' => '89145924965111',
                 'port' => '587',
-                'encryption' => 'tls',
+                'encryption' => 'ssl',
             ],
         ],
         'user' => [
