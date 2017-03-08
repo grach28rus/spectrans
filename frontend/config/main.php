@@ -20,7 +20,7 @@ return [
             'useFileTransport' => false,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'mail.yandex.ru',
+                'host' => 'ssl://smtp.yandex.com',
                 'username' => 'service@territoriyad.com',
                 'password' => '89145924965111',
                 'port' => '587',
