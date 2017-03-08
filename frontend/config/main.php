@@ -15,6 +15,18 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'mx.yandex.net',
+                'username' => 'service@territoriyad.com',
+                'password' => '89145924965111',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
