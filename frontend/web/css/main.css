@@ -31,7 +31,7 @@ ul.navbar-nav {
     top:12px;
     left:100%;
     margin-top:-6px;
-    margin-left:2px;
+    margin-left:0;
     -webkit-border-radius:0 6px 6px 6px;
     -moz-border-radius:0 6px 6px 6px;
     border-radius:0 6px 6px 6px;

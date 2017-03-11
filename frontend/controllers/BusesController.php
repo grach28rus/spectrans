@@ -119,18 +119,18 @@ class BusesController extends Controller
 
     public function actionBusesList($id = null)
     {
-        $buses = Buses::find();
-        $typesEquipment = null;
+        $typesEquipment = TypesEquipment::find();
         if ($id) {
-            $buses->where(['types_equipment_id' => $id]);
-            $typesEquipment = TypesEquipment::findOne($id);
+            $typesEquipment->where(['id' => $id]);
         }
-        $buses = $buses->all();
-
+        $typesEquipment = $typesEquipment->all();
+        $buses = [];
+        foreach ($typesEquipment as $typeEquipment) {
+            $buses[$typeEquipment->name] = Buses::findAll(['types_equipment_id' => $typeEquipment->id]);
+        }
 
         return $this->render('busesList', [
-            'buses'          => $buses,
-            'typesEquipment' => $typesEquipment
+            'typesEquipment' => $buses
         ]);
     }
 
