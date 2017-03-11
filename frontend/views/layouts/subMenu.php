@@ -15,10 +15,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 <?= $category[$categoryId] ?>
             </a>
-            <ul class="sub-menu-item dropdown-menu">
+            <ul class="sub-menu-item dropdown-menu multi-level">
             <?php foreach ($types as $type) : ?>
                 <li class="dropdown">
-                    <a href="/buses/buses-list?id=<?= $type->id ?>" tabindex="-1">
+                    <a href="/buses/buses-list?id=<?= $type->id ?>" style="position: relative">
                         <?= $type->name ?>
                     </a>
                 </li>

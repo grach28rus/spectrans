@@ -72,7 +72,7 @@ $menuDropDown = $this->render('subMenu', [
 
         $menuItems[] = "<li style=\"padding-top: 8px\">
                             <button type=\"button\" class=\"btn btn-md btn-block btn-info\" data-toggle=\"modal\" data-target=\"#contact-modal\">
-                                Расчёт цены
+                                Расчёт стоимости
                             </button>
                         </li>";
 
