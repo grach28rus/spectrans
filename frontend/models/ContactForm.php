@@ -57,9 +57,9 @@ class ContactForm extends Model
     {
         return Yii::$app->mailer->compose()
             ->setTo($email)
-            ->setFrom(['info@rentpromtrans.ru' => 'New Order'])
+            ->setFrom(['zakaz@rentpromtrans.ru' => 'New Order'])
             ->setSubject($this->subject)
-            ->setTextBody($this->body)
+            ->setTextBody('privet')
             ->send();
     }
 }
