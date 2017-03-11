@@ -6,10 +6,11 @@ use Yii;
 use common\models\TypesEquipment;
 use frontend\models\TypesEquipmentSearch;
 use frontend\components\Controller;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use common\models\UploadForm;
-use yii\web\UploadedFile;
+use common\models\Category;
 
 /**
  * TypesEquipmentController implements the CRUD actions for TypesEquipment model.
@@ -66,12 +67,14 @@ class TypesEquipmentController extends Controller
     public function actionCreate()
     {
         $model = new TypesEquipment();
-
+        $category = Category::find()->all();
+        $category = ArrayHelper::map($category, 'id', 'name');
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['update', 'id' => $model->id]);
         } else {
             return $this->render('create', [
-                'model' => $model,
+                'model'    => $model,
+                'category' => $category,
             ]);
         }
     }
@@ -85,15 +88,18 @@ class TypesEquipmentController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $category = Category::find()->all();
+        $category = ArrayHelper::map($category, 'id', 'name');
         $uploadForm = new UploadForm();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model'      => $model,
-                'uploadForm' => $uploadForm,
-            ]);
+
         }
+
+        return $this->render('update', [
+            'model'      => $model,
+            'uploadForm' => $uploadForm,
+            'category'   => $category,
+        ]);
     }
 
     /**

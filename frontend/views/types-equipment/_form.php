@@ -2,16 +2,28 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\TypesEquipment */
 /* @var $form yii\widgets\ActiveForm */
 /* @var $uploadForm common\models\UploadForm */
+/* @var $category array */
+
 ?>
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-6">
         <?php $form = ActiveForm::begin(); ?>
+
+        <?= $form->field($model, 'category_id')->widget(Select2::classname(), [
+            'data' => $category,
+            'language' => 'ru',
+            'options' => ['placeholder' => Yii::t('app', 'Выберите категорию') . '...'],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ]); ?>
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

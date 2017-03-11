@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Buses */
 /* @var $typesEquipment array */
 
-$this->title = 'Create Buses';
+$this->title = 'Создание техники';
 $this->params['breadcrumbs'][] = ['label' => 'Buses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

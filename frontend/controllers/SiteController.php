@@ -10,7 +10,6 @@ use frontend\models\ContactForm;
 use common\models\UploadForm;
 use yii\web\UploadedFile;
 use common\models\TypesEquipment;
-use yii\base\ErrorException;
 
 /**
  * Site controller

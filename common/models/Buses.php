@@ -47,11 +47,11 @@ class Buses extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'types_equipment_id' => 'Types Equipment ID',
-            'name' => 'Name',
-            'description' => 'Description',
-            'cost_in_h' => 'Cost In H',
-            'cost_in_period' => 'Cost In Period',
+            'types_equipment_id' => 'Тип спец-техники',
+            'name' => 'Наименование',
+            'description' => 'Описание',
+            'cost_in_h' => 'Стоимость в час',
+            'cost_in_period' => 'Стоимость за смену',
             'create_at' => 'Create At',
             'update_at' => 'Update At',
         ];

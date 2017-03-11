@@ -4,32 +4,24 @@ namespace frontend\components;
 
 use Yii;
 use common\models\TypesEquipment;
+use common\models\Category;
+use yii\helpers\ArrayHelper;
 
 class Controller extends \yii\web\Controller{
 
-    public $typesEquipment;
+    public $dataForMenu;
+    public $categories;
 
     public function init()
     {
-       $this->typesEquipment = TypesEquipment::find()->all();
-        parent::init();
-    }
-
-    public function generateResponse($template = null, $dataForTemplate = [])
-    {
-        if (Yii::$app->request->isAjax) {
-            $actionTemplate = $template ? self::renderAjax($template, $dataForTemplate) : $template;
-            if ($this->addMessage) {
-                $actionTemplate = json_encode([
-                    'actionTemplate' => $actionTemplate,
-                    'success'        => $this->success ? $this->success : false,
-                    'messages'       => $this->messages ? $this->messages : Yii::t('app', 'Operation has been performed!'),
-                ]);
-            }
-        } else {
-            $actionTemplate = $template ? $this->render($template, $dataForTemplate) : $template;
+        $categories = Category::find()->all();
+        $categories = ArrayHelper::map($categories, 'id', 'name');
+        $dataForMenu = [];
+        foreach ($categories as $categoryId => $categoryName) {
+            $dataForMenu[$categoryId] = TypesEquipment::findAll(['category_id' => $categoryId]);
         }
-
-        return $actionTemplate;
+        $this->dataForMenu = $dataForMenu;
+        $this->categories = $categories;
+        parent::init();
     }
 }

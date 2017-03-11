@@ -7,19 +7,16 @@ use yii\helpers\Html;
 use frontend\assets\AppAsset;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
-use common\widgets\Alert;
 
 AppAsset::register($this);
 
-$typesEquipment = [];
-foreach ($this->context->typesEquipment as $type) {
-    $typesEquipment[] = [
-        'label' => $type->name,
-        'url' => ['/buses/buses-list', 'id' => $type->id]
-    ];
-}
+$menuDropDown = $this->render('subMenu', [
+    'category'    => $this->context->categories,
+    'dataForMenu' => $this->context->dataForMenu,
+]);
 ?>
 <?php $this->beginPage() ?>
+
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
@@ -66,12 +63,13 @@ foreach ($this->context->typesEquipment as $type) {
             ],
         ]);
         $menuItems = [
-            ['label' => 'Главная', 'url' => ['/site/index']],
-            ['label' => 'Техника', 'items' => $typesEquipment],
-            ['label' => 'Цены', 'url' => ['/buses/buses-list']],
-            ['label' => 'О компании', 'url' => ['/site/about']],
-            ['label' => 'Контакты', 'url' => ['/site/contacts-company']],
+            ['label' => 'Главная', 'url' => ['/site/index']]
         ];
+        $menuItems[] = $menuDropDown;
+        $menuItems[] = ['label' => 'Цены', 'url' => ['/buses/buses-list']];
+        $menuItems[] = ['label' => 'О компании', 'url' => ['/site/about']];
+        $menuItems[] = ['label' => 'Контакты', 'url' => ['/site/contacts-company']];
+           
         $menuItems[] = "<li style=\"padding-top: 8px\">
                             <button type=\"button\" class=\"btn btn-md btn-block btn-info\" data-toggle=\"modal\" data-target=\"#contact-modal\">
                                 Расчёт цены
@@ -79,6 +77,7 @@ foreach ($this->context->typesEquipment as $type) {
                         </li>";
 
         if (!Yii::$app->user->isGuest) {
+            $menuItems[] = ['label' => 'Категории', 'url' => ['/category/index']];
             $menuItems[] = ['label' => 'Тип спецтехники', 'url' => ['/types-equipment/index']];
             $menuItems[] = ['label' => 'Спец техника', 'url' => ['/buses/index']];
             $menuItems[] = ['label' => 'Характиристики', 'url' => ['/characteristics-buses/index']];

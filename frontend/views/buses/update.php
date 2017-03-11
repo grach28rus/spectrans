@@ -8,7 +8,7 @@ use yii\helpers\Html;
 /* @var $characteristicsBusesModel \common\models\CharacteristicsBuses */
 /* @var $characteristicsBusesData array \common\models\CharacteristicsBuses */
 
-$this->title = 'Update Buses: ' . $model->name;
+$this->title = 'Обновление техники: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Buses', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';

@@ -18,6 +18,7 @@ use yii\web\UploadedFile;
  * @property string $update_at
  * @property string $image_path
  * @property string $price
+ * @property string $category_id
  */
 class TypesEquipment extends \yii\db\ActiveRecord
 {
@@ -36,7 +37,7 @@ class TypesEquipment extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'description'], 'required'],
-            [['description', 'image_path'], 'string'],
+            [['description', 'image_path', 'category_id'], 'string'],
             [['create_at', 'update_at'], 'safe'],
             [['name'], 'string', 'max' => 100],
         ];
@@ -62,11 +63,12 @@ class TypesEquipment extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'description' => 'Description',
+            'name' => 'Наименование',
+            'description' => 'Описание',
             'create_at' => 'Create At',
             'update_at' => 'Update At',
-            'image_path' => 'Image Path',
+            'image_path' => 'Кртинка',
+            'category_id' => 'Категория',
         ];
     }
 }

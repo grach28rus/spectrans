@@ -45,9 +45,9 @@ class CharacteristicsBuses extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'buses_id' => 'Buses ID',
-            'name' => 'Name',
-            'value' => 'Value',
+            'buses_id' => 'Техника',
+            'name' => 'Наименование',
+            'value' => 'Значение',
             'create_at' => 'Create At',
             'update_at' => 'Update At',
         ];
