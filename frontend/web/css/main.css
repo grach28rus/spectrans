@@ -68,3 +68,7 @@ ul.navbar-nav {
     color: white;
     background: inherit;
 }
+
+.product-box {
+    height: 250px;
+}
