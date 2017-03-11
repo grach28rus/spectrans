@@ -59,7 +59,7 @@ class ContactForm extends Model
             ->setTo($email)
             ->setFrom(['info@rentpromtrans.ru' => 'Zakaz'])
             ->setSubject($this->subject)
-            ->setTextBody('dfvd')
+            ->setTextBody($this->body)
             ->send();
     }
 }
