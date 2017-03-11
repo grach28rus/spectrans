@@ -163,4 +163,9 @@ class SiteController extends Controller
 
         return $this->redirect(['/types-equipment/update', 'id' => $model->id]);
     }
+
+    public function actionContactsCompany()
+    {
+        return $this->render('contactsCompany');
+    }
 }

@@ -26,7 +26,7 @@ foreach ($this->context->typesEquipment as $type) {
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode('РентПромТранс') ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -70,10 +70,11 @@ foreach ($this->context->typesEquipment as $type) {
             ['label' => 'Техника', 'items' => $typesEquipment],
             ['label' => 'Цены', 'url' => ['/buses/buses-list']],
             ['label' => 'О компании', 'url' => ['/site/about']],
+            ['label' => 'Контакты', 'url' => ['/site/contacts-company']],
         ];
         $menuItems[] = "<li style=\"padding-top: 8px\">
                             <button type=\"button\" class=\"btn btn-md btn-block btn-info\" data-toggle=\"modal\" data-target=\"#contact-modal\">
-                                Сделать заказ
+                                Расчёт цены
                             </button>
                         </li>";
 
@@ -100,51 +101,6 @@ foreach ($this->context->typesEquipment as $type) {
         NavBar::end();
         ?>
     </div>
-<!--    <div id="float-nav-bar">-->
-<!--        <div class="anchor"></div>-->
-<!--        <nav id="nav-trans" class="navbar-inverse navbar-static-top border-none navbar" role="navigation">-->
-<!--            <div class="container">-->
-<!--                <div class="navbar-header">-->
-<!--                    <a class="navbar-brand" href="/">РентПромТранс</a>-->
-<!--                </div>-->
-<!--                <div id="nav-trans-collapse" class="collapse navbar-collapse">-->
-<!--                    <ul id="w0" class="navbar-nav navbar-right nav">-->
-<!--                        --><?php //foreach ($menuItems as $menuItem) : ?>
-<!--                            --><?php
-//                                $classItem = $menuItem['url'] == $currentUrl ? 'active' : '';
-//                            ?>
-<!--                            --><?php //if (isset($menuItem['items'])) : ?>
-<!--                                <li class="dropdown">-->
-<!--                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">-->
-<!--                                        --><?//= $menuItem['label'] ?>
-<!--                                        <b class="caret"></b>-->
-<!--                                    </a>-->
-<!--                                    <ul id="w1" class="dropdown-menu">-->
-<!--                                        --><?php //foreach ($menuItem['items'] as $item) : ?>
-<!--                                            <li>-->
-<!--                                                <a href="/buses/buses-list?id=--><?//= $item['id'] ?><!--" tabindex="-1">-->
-<!--                                                    --><?//= $item['label'] ?>
-<!--                                                </a>-->
-<!--                                            </li>-->
-<!--                                        --><?php //endforeach; ?>
-<!--                                    </ul>-->
-<!--                                </li>-->
-<!--                            --><?php //else : ?>
-<!--                                <li class="--><?//= $classItem ?><!--">-->
-<!--                                    <a href="--><?//= $menuItem['url'] ?><!--">--><?//= $menuItem['label'] ?><!--</a>-->
-<!--                                </li>-->
-<!--                            --><?php //endif; ?>
-<!--                        --><?php //endforeach; ?>
-<!--                        <li style="padding-top: 8px">-->
-<!--                            <button type="button" class="btn btn-md btn-block btn-info" data-toggle="modal" data-target="#contact-modal">-->
-<!--                                Сделать заказ-->
-<!--                            </button>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
-<!--    </div>-->
     <div class="container">
         <?= $content ?>
     </div>
