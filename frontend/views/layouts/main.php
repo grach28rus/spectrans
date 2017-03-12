@@ -49,7 +49,18 @@ $menuDropDown = $this->render('subMenu', [
 ]) ?>
 <div class="wrap">
     <header>
-
+        <h2 style="margin: 0" class="pull-right back">
+            <p>
+                +7-495-642-44-02
+            </p>
+            <p class="logo" style="font-size: 18px">
+                <a href="/" style="color: #676a6c">
+                    <b>
+                        info@rentpromtrans.ru
+                    </b>
+                </a>
+            </p>
+        </h2>
     </header>
     <div id="float-nav-bar">
         <div class="anchor"></div>

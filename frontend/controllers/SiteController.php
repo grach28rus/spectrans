@@ -70,7 +70,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $typesEquipment = TypesEquipment::find()->orderBy('name')->all();
+        $typesEquipment = TypesEquipment::find()->orderBy('sort, name')->all();
 
         return $this->render('index', [
             'typesEquipment' => $typesEquipment
