@@ -117,11 +117,14 @@ class BusesController extends Controller
         return $this->redirect(['index']);
     }
 
-    public function actionBusesList($id = null)
+    public function actionBusesList($id = null, $category_id = null)
     {
         $typesEquipment = TypesEquipment::find();
         if ($id) {
             $typesEquipment->where(['id' => $id]);
+        }
+        if ($category_id) {
+            $typesEquipment->where(['category_id' => $category_id]);
         }
         $typesEquipment = $typesEquipment->all();
         $buses = [];

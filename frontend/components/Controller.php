@@ -16,10 +16,18 @@ class Controller extends \yii\web\Controller{
     {
         $categories = Category::find()->all();
         $categories = ArrayHelper::map($categories, 'id', 'name');
+        $typesEquipment = TypesEquipment::find()->all();
+        $typesEquipment = ArrayHelper::index($typesEquipment, 'id');
         $dataForMenu = [];
         foreach ($categories as $categoryId => $categoryName) {
-            $dataForMenu[$categoryId] = TypesEquipment::findAll(['category_id' => $categoryId]);
+            foreach ($typesEquipment as $typeEquipmentId => $typeEquipment) {
+                if ($categoryId == $typeEquipment->category_id) {
+                    $dataForMenu[$categoryId][] = $typeEquipment;
+                    ArrayHelper::remove($typesEquipment, $typeEquipmentId);
+                }
+            }
         }
+        $dataForMenu = ArrayHelper::merge($dataForMenu, $typesEquipment);
         $this->dataForMenu = $dataForMenu;
         $this->categories = $categories;
         parent::init();

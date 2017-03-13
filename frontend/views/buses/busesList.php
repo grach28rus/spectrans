@@ -13,6 +13,11 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="buses-index" style="margin-top: 10px">
     <div class="row hidden-sm hidden-xs" style="margin-top: 10px">
+        <div class="col-md-12" style="background: white;">
+            <b>
+                <?= Html::a('Скачать прайс', '/uploads/files/price.xlsx'); ?> <i class="fa fa-download"></i>
+            </b>
+        </div>
         <?php foreach ($typesEquipment as $typeEquipmentName => $buses) : ?>
             <div class="col-md-12" style="background: #505050; color: white">
                 <h2>

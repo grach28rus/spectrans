@@ -70,3 +70,10 @@ ul.navbar-nav {
     right: 10px;
     top: 10px;
 }
+
+.social-networks{
+    width: 40px;
+    left: 0;
+    top: 290px;
+    position: fixed;
+}

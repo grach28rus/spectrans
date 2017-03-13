@@ -48,6 +48,23 @@ $menuDropDown = $this->render('subMenu', [
     ]
 ]) ?>
 <div class="wrap">
+    <div class="social-networks hidden-xs hidden-sm">
+        <div class="col-md-12 no-padding">
+            <a href="https://www.facebook.com/groups/rentpromtrans.ru">
+                <?= Html::img('/images/FB.png', ['class' => 'img-responsive']) ?>
+            </a>
+        </div>
+        <div class="col-md-12 no-padding" style="margin-top: 5px">
+            <a href="https://ok.ru/group/58266159218733">
+                <?= Html::img('/images/Odnoklasniki.png', ['class' => 'img-responsive']) ?>
+            </a>
+        </div>
+        <div class="col-md-12 no-padding" style="margin-top: 5px">
+            <a href="https://vk.com/rentpromtrans">
+                <?= Html::img('/images/VK.png', ['class' => 'img-responsive']) ?>
+            </a>
+        </div>
+    </div>
     <header>
         <h2 style="margin: 0" class="pull-right back">
             <p>
@@ -122,7 +139,6 @@ $menuDropDown = $this->render('subMenu', [
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; РентПромТранс <?= date('Y') ?></p>
-
         <p class="pull-right">+7 (495) 642-44-02</p>
     </div>
 </footer>
