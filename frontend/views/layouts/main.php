@@ -71,7 +71,7 @@ $menuDropDown = $this->render('subMenu', [
                 +7-495-642-44-02
             </p>
             <p class="logo" style="font-size: 18px">
-                <a href="/" style="color: #676a6c">
+                <a href="mailto:info@rentpromtrans.ru" style="color: #676a6c">
                     <b>
                         info@rentpromtrans.ru
                     </b>
