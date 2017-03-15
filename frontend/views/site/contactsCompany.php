@@ -122,4 +122,5 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         </tbody>
     </table>
+    <a href="http://rentpromtrans.ru" target="_blank"><img src="http://rentpromtrans.ru/images/qr-code.gif" width="66" height="66" border="0" title="QR код"></a>
 </div>

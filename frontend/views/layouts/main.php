@@ -50,17 +50,17 @@ $menuDropDown = $this->render('subMenu', [
 <div class="wrap">
     <div class="social-networks hidden-xs hidden-sm">
         <div class="col-md-12 no-padding">
-            <a href="https://www.facebook.com/groups/rentpromtrans.ru">
+            <a href="https://www.facebook.com/groups/rentpromtrans.ru" target="_blank">
                 <?= Html::img('/images/FB.png', ['class' => 'img-responsive']) ?>
             </a>
         </div>
         <div class="col-md-12 no-padding" style="margin-top: 5px">
-            <a href="https://ok.ru/group/58266159218733">
+            <a href="https://ok.ru/group/58266159218733" target="_blank">
                 <?= Html::img('/images/Odnoklasniki.png', ['class' => 'img-responsive']) ?>
             </a>
         </div>
         <div class="col-md-12 no-padding" style="margin-top: 5px">
-            <a href="https://vk.com/rentpromtrans">
+            <a href="https://vk.com/rentpromtrans" target="_blank">
                 <?= Html::img('/images/VK.png', ['class' => 'img-responsive']) ?>
             </a>
         </div>
