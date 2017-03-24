@@ -60,10 +60,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <td>
                                         <h3>
                                             <?php
-                                                $countSpace = ($maxLengthBusName - mb_strlen($bus->name)) * 2;
+                                                $countSpace = $maxLengthBusName - mb_strlen($bus->name);
                                                 $space = '';
                                                 for ($i = 0; $i < $countSpace; $i++) {
-                                                    $space = $space . '&nbsp';
+                                                    $space = $space . '_';
                                                 }
                                             ?>
                                             <?= $bus->name . $space ?>
