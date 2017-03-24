@@ -37,7 +37,8 @@ class TypesEquipment extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'description'], 'required'],
-            [['description', 'image_path', 'category_id'], 'string'],
+            [['description', 'image_path'], 'string'],
+            [['category_id'], 'integer'],
             [['create_at', 'update_at'], 'safe'],
             [['name'], 'string', 'max' => 100],
         ];

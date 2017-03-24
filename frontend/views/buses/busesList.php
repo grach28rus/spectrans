@@ -24,6 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $typeEquipmentName ?>
                 </h2>
             </div>
+            <?php
+            $maxLengthBusName = 0;
+            foreach ($buses as $bus) {
+                $currentLength = mb_strlen($bus->name);
+                if ($currentLength > $maxLengthBusName) {
+                    $maxLengthBusName = $currentLength;
+                }
+            }
+            ?>
             <?php foreach ($buses as $bus) : ?>
                 <div class="col-md-12">
                     <div class="ibox" style="margin-bottom: 2px">
@@ -50,7 +59,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <tr>
                                     <td>
                                         <h3>
-                                            <?= $bus->name ?>
+                                            <?php
+                                                $countSpace = $maxLengthBusName - mb_strlen($bus->name);
+                                                $space = '';
+                                                for ($i = 0; $i < $countSpace; $i++) {
+                                                    $space = $space . '&nbsp';
+                                                }
+                                            ?>
+                                            <?= $bus->name . $space ?>
                                         </h3>
                                     </td>
                                     <?php foreach ($characteristicsBusesData as $characteristicBusesData) : ?>
