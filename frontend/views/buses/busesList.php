@@ -25,7 +25,7 @@ $lengthOneSymbol = 11;
                     <?= $typeEquipmentName ?>
                 </h2>
             </div>
-            <?php $width = 100; ?>
+            <?php $width = 0; ?>
             <?php foreach ($buses as $bus) {
                 $strLenName = mb_strlen($bus->name);
                 $width = $lengthOneSymbol * $strLenName;
