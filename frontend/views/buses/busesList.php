@@ -28,7 +28,9 @@ $lengthOneSymbol = 11;
             <?php $width = 0; ?>
             <?php foreach ($buses as $bus) {
                 $strLenName = mb_strlen($bus->name);
-                $width = $lengthOneSymbol * $strLenName;
+                if ($width < ($lengthOneSymbol * $strLenName)) {
+                    $width = $lengthOneSymbol * $strLenName;
+                }
             }?>
             <?php foreach ($buses as $bus) : ?>
                 <div class="col-md-12">
