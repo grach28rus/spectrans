@@ -27,7 +27,7 @@ $lengthOneSymbol = 11;
             </div>
             <?php $width = 0; ?>
             <?php foreach ($buses as $bus) {
-                $strLenName = mb_strlen($bus->name);
+                $strLenName = iconv_strlen($bus->name, 'UTF-8');
                 $newWidth = $lengthOneSymbol * $strLenName;
                 if ($width < $newWidth) {
                     $width = $newWidth;
@@ -59,7 +59,7 @@ $lengthOneSymbol = 11;
                                 <tr>
                                     <td style="width:<?= $width ?>px">
                                         <h3>
-                                            <?= $bus->name ?> | <?=  iconv_strlen($bus->name, 'UTF-8') ?>
+                                            <?= $bus->name ?>
                                         </h3>
                                     </td>
                                     <?php foreach ($characteristicsBusesData as $characteristicBusesData) : ?>
