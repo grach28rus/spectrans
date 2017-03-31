@@ -9,7 +9,7 @@ use common\models\CharacteristicsBuses;
 
 $this->title = 'Цены';
 $this->params['breadcrumbs'][] = $this->title;
-
+$lengthOneSymbol = 11;
 ?>
 <div class="buses-index" style="margin-top: 10px">
     <div class="row hidden-sm hidden-xs" style="margin-top: 10px">
@@ -24,12 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $typeEquipmentName ?>
                 </h2>
             </div>
-            <?php
-            $style = '';
-                if ($typeEquipmentName == 'Башенный кран') {
-                    $style = 'width: 200px';
-                }
-            ?>
             <?php foreach ($buses as $bus) : ?>
                 <div class="col-md-12">
                     <div class="ibox" style="margin-bottom: 2px">
@@ -54,7 +48,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td style="<?= $style ?>">
+                                    <?php
+                                    $strLenName = mb_strlen($bus->name);
+                                    $width = $lengthOneSymbol * $strLenName;
+                                    ?>
+                                    <td style="width:<?= $width + 10 ?>px">
                                         <h3>
                                             <?= $bus->name ?>
                                         </h3>

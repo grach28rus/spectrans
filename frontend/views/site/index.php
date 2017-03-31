@@ -5,7 +5,19 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $typesEquipment array \common\models\TypesEquipment */
 
-$this->title = 'My Yii Application';
+$this->title = 'Аренда Автокрана | Аренда спецтехники | Срочно Москва и Московская область - ООО РентПромТранс';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Аренда Автокрана | Аренда спецтехники | Срочно Москва и Московская область - ООО РентПромТранс'
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => 'Аренда Автокрана, Аренда спецтехники, Срочно Москва и Московская область'
+]);
+$this->registerMetaTag([
+    'name' => 'robots',
+    'content' => 'index,follow'
+]);
 ?>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">

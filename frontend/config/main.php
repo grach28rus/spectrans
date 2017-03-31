@@ -52,10 +52,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'logout' => 'admin/logout',
-                'admin' => 'admin/index',
-                'login' => 'admin/login',
-                '/' => 'site/index',
+                'logout'      => 'admin/logout',
+                'admin'       => 'admin/index',
+                'login'       => 'admin/login',
+                '/'           => 'site/index',
+                'sitemap.xml' => 'site-map/index'
             ],
         ],
     ],
