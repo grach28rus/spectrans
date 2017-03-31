@@ -59,7 +59,7 @@ $lengthOneSymbol = 11;
                                 <tr>
                                     <td style="width:<?= $width ?>px">
                                         <h3>
-                                            <?= $bus->name ?> | <?=  mb_strlen($bus->name) ?>
+                                            <?= $bus->name ?> | <?=  strlen($bus->name) ?>
                                         </h3>
                                     </td>
                                     <?php foreach ($characteristicsBusesData as $characteristicBusesData) : ?>
