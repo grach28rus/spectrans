@@ -28,8 +28,9 @@ $lengthOneSymbol = 11;
             <?php $width = 0; ?>
             <?php foreach ($buses as $bus) {
                 $strLenName = mb_strlen($bus->name);
-                if ($width < ($lengthOneSymbol * $strLenName)) {
-                    $width = $lengthOneSymbol * $strLenName;
+                $newWidth = $lengthOneSymbol * $strLenName;
+                if ($width < $newWidth) {
+                    $width = $newWidth;
                 }
             }?>
             <?php foreach ($buses as $bus) : ?>
@@ -58,7 +59,7 @@ $lengthOneSymbol = 11;
                                 <tr>
                                     <td style="width:<?= $width ?>px">
                                         <h3>
-                                            <?= $bus->name ?>
+                                            <?= $bus->name ?> | <?=  mb_strlen($bus->name) ?>
                                         </h3>
                                     </td>
                                     <?php foreach ($characteristicsBusesData as $characteristicBusesData) : ?>
