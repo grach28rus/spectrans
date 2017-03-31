@@ -56,7 +56,7 @@ $lengthOneSymbol = 11;
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td style="width:<?= $width + 10 ?>px">
+                                    <td style="width:<?= $width ?>px">
                                         <h3>
                                             <?= $bus->name ?>
                                         </h3>
