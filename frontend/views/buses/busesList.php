@@ -10,7 +10,7 @@ use common\models\CharacteristicsBuses;
 $this->title = 'Цены';
 $this->params['breadcrumbs'][] = $this->title;
 $lengthOneSymbol = 11;
-$width = 100;
+
 ?>
 <div class="buses-index" style="margin-top: 10px">
     <div class="row hidden-sm hidden-xs" style="margin-top: 10px">
@@ -25,6 +25,7 @@ $width = 100;
                     <?= $typeEquipmentName ?>
                 </h2>
             </div>
+            <?php $width = 100; ?>
             <?php foreach ($buses as $bus) {
                 $strLenName = mb_strlen($bus->name);
                 $width = $lengthOneSymbol * $strLenName;
