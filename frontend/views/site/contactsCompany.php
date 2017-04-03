@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-md-4">
         <b>
-<!--            --><?//= Html::a('Скачать реквизиты', '/uploads/files/cartRPT.docx'); ?><!-- <i class="fa fa-download"></i>-->
+            <?= Html::a('Скачать реквизиты', '/uploads/files/cartRPT.docx'); ?> <i class="fa fa-download"></i>
         </b>
     </div>
     <table class="table table-hover">
