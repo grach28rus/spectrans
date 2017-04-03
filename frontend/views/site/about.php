@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-md-4">
         <b>
-            <?= Html::a('Скачать прайс', '/uploads/files/price.xlsx'); ?> <i class="fa fa-download"></i>
+<!--            --><?//= Html::a('Скачать прайс', '/uploads/files/price.xlsx'); ?><!-- <i class="fa fa-download"></i>-->
         </b>
     </div>
     <div class="col-md-12 no-padding">
