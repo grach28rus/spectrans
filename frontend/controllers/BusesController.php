@@ -129,7 +129,8 @@ class BusesController extends Controller
         $typesEquipment = $typesEquipment->all();
         $buses = [];
         foreach ($typesEquipment as $typeEquipment) {
-            $buses[$typeEquipment->name] = Buses::findAll(['types_equipment_id' => $typeEquipment->id]);
+            $buses[$typeEquipment->name] = Buses::find()->where(['types_equipment_id' => $typeEquipment->id])
+                ->orderBy('name')->all();
         }
 
         return $this->render('busesList', [
