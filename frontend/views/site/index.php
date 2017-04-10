@@ -37,7 +37,7 @@ $this->registerMetaTag([
                             <?= $typeEquipment->description ?>
                         </div>
                     </div>
-                    <div class="m-t text-right" style="position: absolute; bottom: 5px; right: 10px">
+                    <div class="m-t text-right" style="position: absolute; bottom: 10px; right: 10px">
                         <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="btn btn-sm btn-outline btn-primary">
                             Подробнее
                             <i class="fa fa-long-arrow-right"></i>
