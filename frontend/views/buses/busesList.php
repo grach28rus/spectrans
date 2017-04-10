@@ -6,8 +6,9 @@ use common\models\CharacteristicsBuses;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\BusesSearch */
 /* @var $typesEquipment array */
+/* @var $title string */
 
-$this->title = 'Цены';
+$this->title = $title;
 $this->params['breadcrumbs'][] = $this->title;
 $lengthOneSymbol = 11;
 

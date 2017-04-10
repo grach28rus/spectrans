@@ -24,7 +24,7 @@ $this->registerMetaTag([
     <?php foreach ($typesEquipment as $typeEquipment) : ?>
         <div class="col-md-3">
             <div class="ibox">
-                <div class="ibox-content product-box">
+                <div class="ibox-content product-box" style="position: relative; ">
 
                     <div class="product-imitation">
                         <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="product-name">
@@ -36,9 +36,12 @@ $this->registerMetaTag([
                         <div class="small m-t-xs">
                             <?= $typeEquipment->description ?>
                         </div>
-                        <div class="m-t text-right">
-                            <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="btn btn-sm btn-outline btn-primary">Подробнее <i class="fa fa-long-arrow-right"></i> </a>
-                        </div>
+                    </div>
+                    <div class="m-t text-right" style="position: absolute; bottom: 5px; right: 10px">
+                        <a href="/buses/buses-list?id=<?= $typeEquipment->id ?>" class="btn btn-sm btn-outline btn-primary">
+                            Подробнее
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

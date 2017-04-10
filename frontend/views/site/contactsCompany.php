@@ -7,7 +7,7 @@ use yii\helpers\Html;
 $this->title = 'Контакты';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-about ibox-content">
+<div class="site-about ibox-content row">
     <h1><?= Html::encode($this->title) ?></h1>
     <div class="col-md-8">
         <h3>
@@ -122,6 +122,6 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
         </tbody>
     </table>
-    <a href="http://rentpromtrans.ru" class="pull-right" target="_blank"><img src="http://qrcoder.ru/code/?BEGIN%3AVCARD%0AFN%3A%C0%ED%F2%EE%ED+%C2%E8%EA%F2%EE%F0%EE%E2%E8%F7%0AORG%3A%D0%E5%ED%F2%CF%F0%EE%EC%D2%F0%E0%ED%F1%0ATEL%3A%2B74956424402%0AURL%3Ahttp%3A%2F%2Frentpromtrans.ru%0AEMAIL%3Ainfo%40rentpromtrans.ru%0ANOTE%3A%C0%F0%E5%ED%E4%E0+%F1%EF%E5%F6%F2%E5%F5%ED%E8%EA%E8%0AEND%3AVCARD&3&0" width="66" height="66" border="0" title="QR код"></a>
-    <a href="http://rentpromtrans.ru" target="_blank"><img src="http://rentpromtrans.ru/images/qr-code.gif" width="66" height="66" border="0" title="QR код"></a>
+    <a href="http://rentpromtrans.ru" class="pull-right" target="_blank"><img src="http://qrcoder.ru/code/?BEGIN%3AVCARD%0AFN%3A%C0%ED%F2%EE%ED+%C2%E8%EA%F2%EE%F0%EE%E2%E8%F7%0AORG%3A%D0%E5%ED%F2%CF%F0%EE%EC%D2%F0%E0%ED%F1%0ATEL%3A%2B74956424402%0AURL%3Ahttp%3A%2F%2Frentpromtrans.ru%0AEMAIL%3Ainfo%40rentpromtrans.ru%0ANOTE%3A%C0%F0%E5%ED%E4%E0+%F1%EF%E5%F6%F2%E5%F5%ED%E8%EA%E8%0AEND%3AVCARD&3&0" width="110" height="110" border="0" title="QR код"></a>
+<!--    <a href="http://rentpromtrans.ru" target="_blank"><img src="http://rentpromtrans.ru/images/qr-code.gif" width="66" height="66" border="0" title="QR код"></a>-->
 </div>

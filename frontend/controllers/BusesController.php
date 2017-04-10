@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Category;
 use Yii;
 use common\models\Buses;
 use frontend\models\BusesSearch;
@@ -120,11 +121,16 @@ class BusesController extends Controller
     public function actionBusesList($id = null, $category_id = null)
     {
         $typesEquipment = TypesEquipment::find();
+        $title = 'Цены';
         if ($id) {
             $typesEquipment->where(['id' => $id]);
+            $nameForTitle = $typesEquipment->one();
+            $title = $nameForTitle->name;
         }
         if ($category_id) {
             $typesEquipment->where(['category_id' => $category_id]);
+            $nameForTitle = Category::find()->where(['id' => $category_id])->one();
+            $title = $nameForTitle->name;
         }
         $typesEquipment = $typesEquipment->all();
         $buses = [];
@@ -134,7 +140,8 @@ class BusesController extends Controller
         }
 
         return $this->render('busesList', [
-            'typesEquipment' => $buses
+            'typesEquipment' => $buses,
+            'title'          => $title
         ]);
     }
 

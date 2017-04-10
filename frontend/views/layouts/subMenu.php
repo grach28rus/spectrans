@@ -14,7 +14,7 @@
 
             <?php if (\yii\helpers\ArrayHelper::keyExists($categoryId, $category)) : ?>
                 <li class="dropdown dropdown-submenu">
-                    <a href="/buses/buses-list?id=''&category_id=<?= $categoryId ?>" class="dropdown-toggle">
+                    <a href="/buses/buses-list?id=&category_id=<?= $categoryId ?>" class="dropdown-toggle">
                         <?= $category[$categoryId] ?>
                     </a>
                     <ul class="sub-menu-item dropdown-menu multi-level">
