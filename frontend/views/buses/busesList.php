@@ -14,6 +14,11 @@ $lengthOneSymbol = 11;
 
 ?>
 <div class="buses-index" style="margin-top: 10px">
+    <?php if (count($typesEquipment) != 1) : ?>
+    <h1 style="margin: 0">
+        <?= $title ?>
+    </h1>
+    <?php endif; ?>
     <div class="row hidden-sm hidden-xs" style="margin-top: 10px">
         <div class="col-md-12" style="background: white;">
             <b>
@@ -22,9 +27,15 @@ $lengthOneSymbol = 11;
         </div>
         <?php foreach ($typesEquipment as $typeEquipmentName => $buses) : ?>
             <div class="col-md-12" style="background: #505050; color: white">
-                <h2>
-                    <?= $typeEquipmentName ?>
-                </h2>
+                <?php if (count($typesEquipment) == 1) : ?>
+                    <h1 style="font-size: 24px">
+                        <?= $typeEquipmentName ?>
+                    </h1>
+                <?php else : ?>
+                    <h2>
+                        <?= $typeEquipmentName ?>
+                    </h2>
+                <?php endif; ?>
             </div>
             <?php $width = 0; ?>
             <?php foreach ($buses as $bus) {
@@ -59,9 +70,9 @@ $lengthOneSymbol = 11;
                                 <tbody>
                                 <tr>
                                     <td style="width:<?= $width ?>px">
-                                        <h3>
+                                        <h2 style="font-size: 16px; font-weight: 600">
                                             <?= $bus->name ?>
-                                        </h3>
+                                        </h2>
                                     </td>
                                     <?php foreach ($characteristicsBusesData as $characteristicBusesData) : ?>
 
@@ -89,9 +100,9 @@ $lengthOneSymbol = 11;
                             <?php $characteristicsBusesData = CharacteristicsBuses::findAll(['buses_id' => $bus->id]); ?>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3>
+                                    <h2 style="font-size: 16px;">
                                         <?= $bus->name ?>
-                                    </h3>
+                                    </h2>
                                 </div>
                                 <div class="col-md-12">
                                     <table class="table table-hover">
