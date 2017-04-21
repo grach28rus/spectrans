@@ -15,7 +15,7 @@ $lengthOneSymbol = 11;
 ?>
 <div class="buses-index" style="margin-top: 10px">
     <?php if (count($typesEquipment) != 1) : ?>
-    <h1 style="margin: 0">
+    <h1 style="margin: 0; font-size: 20px">
         <?= $title ?>
     </h1>
     <?php endif; ?>
