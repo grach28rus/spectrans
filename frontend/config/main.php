@@ -22,7 +22,7 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.yandex.ru',
                 'username' => 'info@rentpromtrans.ru',
-                'password' => 'Z7534887z',
+                'password' => 'H52pTO!ssGX',
                 'port' => '465',
                 'encryption' => 'ssl',
             ],
