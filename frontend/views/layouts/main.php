@@ -28,6 +28,34 @@ $menuDropDown = $this->render('subMenu', [
 </head>
 <body>
 <?php $this->beginBody() ?>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter44462200 = new Ya.Metrika({
+                    id:44462200,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/44462200" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <?= \lavrentiev\widgets\toastr\NotificationFlash::widget([
     'options' => [
         "closeButton" => true,
@@ -66,18 +94,18 @@ $menuDropDown = $this->render('subMenu', [
         </div>
     </div>
     <header>
-        <h2 style="margin: 0" class="pull-right back">
+        <div class="pull-right back">
             <p>
                 +7-495-642-44-02
             </p>
             <p class="logo" style="font-size: 18px">
-                <a href="mailto:info@rentpromtrans.ru" style="color: #474646">
+                <a href="mailto:info@rentpromtrans.ru" rel=“nofollow“ style="color: #474646">
                     <b>
                         info@rentpromtrans.ru
                     </b>
                 </a>
             </p>
-        </h2>
+        </div>
     </header>
     <div id="float-nav-bar">
         <div class="anchor"></div>
