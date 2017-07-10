@@ -96,7 +96,10 @@ $menuDropDown = $this->render('subMenu', [
     <header>
         <div class="pull-right back">
             <p>
-                +7-495-642-44-02
+                +7 (495) 642-44-02
+            </p>
+            <p>
+                +7 (977) 899-39-55
             </p>
             <p class="logo" style="font-size: 18px">
                 <a href="mailto:info@rentpromtrans.ru" rel=“nofollow“ style="color: #474646">
